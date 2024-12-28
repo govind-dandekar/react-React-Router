@@ -9,7 +9,7 @@ import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import RootLayout from "./pages/Root";
 import ErrorPage from "./pages/ErrorPage"
-
+import ProductDetailPage from "./pages/ProductDetailPage";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +21,11 @@ const router = createBrowserRouter([
       // define path for which route should be active
       // path is part after domain
       {path: '/', element: <HomePage />},
-      {path: '/products', element: <ProductsPage />}
+      {path: '/products', element: <ProductsPage />},
+      // dynamic path segment; path params
+      // :productId = any value that will be used as an actual value
+      // for :productId placeholder
+      {path: '/products/:productId', element: <ProductDetailPage />}
     ]
   },
   
