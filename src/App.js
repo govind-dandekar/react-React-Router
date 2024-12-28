@@ -8,19 +8,15 @@ import {
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import RootLayout from "./pages/Root";
+import ErrorPage from "./pages/ErrorPage"
 
-// const routeDefinitions = createRoutesFromElements(
-//   <Route>
-//     <Route path="/" element={<HomePage />} />
-//     <Route path="/products" element={<ProductsPage />} />
-//   </Route>
-// );
 
 const router = createBrowserRouter([
   {
     // parent route wrapper of child routes
     path: '/',
     element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       // define path for which route should be active
       // path is part after domain
