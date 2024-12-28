@@ -23,6 +23,7 @@ const router = createBrowserRouter([
     children: [
       // define path for which route should be active
       // path is part after domain
+      // index: true = parent route applies to set element
       {index: true, element: <HomePage />},
       {path: 'products', element: <ProductsPage />},
       // dynamic path segment; path params
