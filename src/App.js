@@ -14,18 +14,21 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 const router = createBrowserRouter([
   {
     // parent route wrapper of child routes
+    // absolute path starts with '/'; '/root' would conflict
+    // with '/' as a child; remove leading / to make relative
+    // relative paths are appended
     path: '/',
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
       // define path for which route should be active
       // path is part after domain
-      {path: '/', element: <HomePage />},
-      {path: '/products', element: <ProductsPage />},
+      {index: true, element: <HomePage />},
+      {path: 'products', element: <ProductsPage />},
       // dynamic path segment; path params
       // :productId = any value that will be used as an actual value
       // for :productId placeholder
-      {path: '/products/:productId', element: <ProductDetailPage />}
+      {path: 'products/:productId', element: <ProductDetailPage />}
     ]
   },
   
